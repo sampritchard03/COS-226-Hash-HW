@@ -1,11 +1,12 @@
 import csv
 import time
 
-# same as trial 2
+# try modulo to keep the number from getting too large
+# goal: decrease construction time
 def myHash(key):
     total = 0
     for c in key:
-        total = ((total << 5) + ord(c))
+        total = ((total << 5) + ord(c)) % 1000000007
     return total
 
 # linear hash table
