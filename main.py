@@ -1,9 +1,12 @@
 import csv
 import time
 
-# default python hash function for the first commit (not counting this as one of my hash functions)
+# poor hash function: sum of character codes
 def myHash(key):
-    return hash(key)
+    total = 0
+    for c in key:
+        total += ord(c)
+    return total
 
 # basic hash table, no get or delete functions for this assignment
 class HashTable:
@@ -25,10 +28,8 @@ class HashTable:
             if k == key:
                 bucket[i] = (key, value)
                 return
-
-        # collision happened
-        if len(bucket) > 0:
             self.collisions += 1
+
         bucket.append((key, value))
 
     def wasted_space(self):
