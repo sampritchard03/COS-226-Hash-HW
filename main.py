@@ -1,42 +1,43 @@
 import csv
 import time
 
-# better hash function: each character is left shifted before next is added
-# (order is taken into account)
+# same as function 1
 def myHash(key):
     total = 0
     for c in key:
-        total = (total << 5) + ord(c)
+        total += ord(c)
     return total
 
-# basic hash table, no get or delete functions for this assignment
+# linear hash table
 class HashTable:
     def __init__(self, capacity):
         self.collisions = 0
         self.capacity = capacity
         self.table = []
         for i in range(capacity):
-            self.table.append([])
+            self.table.append(None)
 
     def hash(self, key):
         return myHash(key) % self.capacity
 
     def insert(self, key, value):
         index = self.hash(key)
-        bucket = self.table[index]
 
-        for i, (k, v) in enumerate(bucket):
-            if k == key:
-                bucket[i] = (key, value)
+        for step in range(self.capacity):
+            slot = self.table[index]
+
+            if slot is None or slot[0] == key:
+                self.table[index] = (key, value)
                 return
-            self.collisions += 1
 
-        bucket.append((key, value))
+            # collision
+            self.collisions += 1
+            index = (index + 1) % self.capacity
 
     def wasted_space(self):
         empty = 0
-        for bucket in self.table:
-            if len(bucket) == 0:
+        for slot in self.table:
+            if slot is None:
                 empty += 1
         return empty
 

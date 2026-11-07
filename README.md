@@ -30,3 +30,14 @@ Trial 2 - Linked List Better Hash:
     Wasted Space: 7105
     Collisions: 12484
     Construction time (ns): 230938600
+
+Trial 3 - Linear Poor Hash:
+    -- Movies By Title Hash Statistics -- 
+    Wasted Space: 3691
+    Collisions: 54250752
+    Construction time (ns): 4540318300
+
+    -- Movies By Quote Hash Statistics -- 
+    Wasted Space: 109
+    Collisions: 91702029
+    Construction time (ns): 6599335400
