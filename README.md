@@ -1,5 +1,4 @@
 Trial 0 - Default Python Hash:
-
     -- Movies By Title Hash Statistics -- 
     Wasted Space: 7079
     Collisions: 3388
@@ -11,7 +10,6 @@ Trial 0 - Default Python Hash:
     Construction time (ns): 18916100
 
 Trial 1 - Linked List Poor Hash:
-
     -- Movies By Title Hash Statistics -- 
     Wasted Space: 11244
     Collisions: 28458
@@ -22,3 +20,13 @@ Trial 1 - Linked List Poor Hash:
     Collisions: 56049
     Construction time (ns): 38680700
 
+Trial 2 - Linked List Better Hash:
+    -- Movies By Title Hash Statistics -- 
+    Wasted Space: 7982
+    Collisions: 7978
+    Construction time (ns): 38093600
+
+    -- Movies By Quote Hash Statistics -- 
+    Wasted Space: 7105
+    Collisions: 12484
+    Construction time (ns): 230938600

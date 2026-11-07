@@ -1,11 +1,12 @@
 import csv
 import time
 
-# poor hash function: sum of character codes
+# better hash function: each character is left shifted before next is added
+# (order is taken into account)
 def myHash(key):
     total = 0
     for c in key:
-        total += ord(c)
+        total = (total << 5) + ord(c)
     return total
 
 # basic hash table, no get or delete functions for this assignment
