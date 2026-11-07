@@ -1,11 +1,11 @@
 import csv
 import time
 
-# same as function 1
+# same as trial 2
 def myHash(key):
     total = 0
     for c in key:
-        total += ord(c)
+        total = ((total << 5) + ord(c))
     return total
 
 # linear hash table
